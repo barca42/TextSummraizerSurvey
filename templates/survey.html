@@ -16,18 +16,26 @@
 <body>
     <h1>Questionnaire</h1>
     <form id="questionnaireForm">
+        {% for question in questions%}
+
         <div class="question">
             <p>Question 1: This is the full text, choose one of the options bellow that best summarize ?</p>
-            <p>This will be the text bla bla bla bla bla blaaaaaaaaaa</p>
+            <p>
+                {{ question["question"] }}
+            </p>
         </div>
         <div class="question">
             <p>Select an option:</p>
-            <label><input type="radio" name="summary" value="extractive"> Extractive Summarization</label><br>
-            <label><input type="radio" name="summary" value="abstractive"> Abstractive Summarization</label><br>
-            <label><input type="radio" name="summary" value="hybrid"> Hybrid Summarization</label><br>
+            <label><input type="radio" name="{{ question["id" ]}}-summary" value="extractive"> {{ question["extractive"] }}</label><br>
+            <label><input type="radio" name="{{ question["id" ]}}-summary" value="abstractive"> {{ question["abstractive"] }}</label><br>
+            <label><input type="radio" name="{{ question["id" ]}}-summary" value="hybrid"> {{ question["hybrid"] }}</label><br>
         </div>
-        <!-- Add more questions here -->
+
+        {% endfor %}
+
         <button type="submit">Submit</button>
+
+
     </form>
 
     </body>
