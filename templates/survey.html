@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questionnaire</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .question {
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+    <h1>Questionnaire</h1>
+    <form id="questionnaireForm">
+        <div class="question">
+            <p>Question 1: This is the full text, choose one of the options bellow that best summarize ?</p>
+            <p>This will be the text bla bla bla bla bla blaaaaaaaaaa</p>
+        </div>
+        <div class="question">
+            <p>Select an option:</p>
+            <label><input type="radio" name="summary" value="extractive"> Extractive Summarization</label><br>
+            <label><input type="radio" name="summary" value="abstractive"> Abstractive Summarization</label><br>
+            <label><input type="radio" name="summary" value="hybrid"> Hybrid Summarization</label><br>
+        </div>
+        <!-- Add more questions here -->
+        <button type="submit">Submit</button>
+    </form>
+
+    </body>
+</html>
