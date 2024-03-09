@@ -15,11 +15,11 @@
 </head>
 <body>
     <h1>Questionnaire</h1>
-    <form id="questionnaireForm">
+    <form id="questionnaireForm" method="post">
         {% for question in questions%}
 
         <div class="question">
-            <p>Question 1: This is the full text, choose one of the options bellow that best summarize ?</p>
+            <p>This is the full text, choose one of the options bellow that best summarize ?</p>
             <p>
                 {{ question["question"] }}
             </p>
@@ -40,3 +40,7 @@
 
     </body>
 </html>
+
+<script>
+  <button onclick="functionToExecute()">Click</button>
+</script>
