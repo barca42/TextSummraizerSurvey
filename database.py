@@ -1,6 +1,7 @@
 import enum
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import func
 
 db = SQLAlchemy()
 
@@ -14,6 +15,6 @@ class Answer(db.Model):
     question_id = db.Column(db.Integer)
     answer = db.Column(db.Enum(AnswerType))
     user_id = db.Column(db.String)
-    created_at = db.Column(db.DateTime())
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
 
 

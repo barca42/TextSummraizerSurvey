@@ -46,7 +46,7 @@
     <hr class="divider">
 
     <form id="questionnaireForm" method="post">
-        {% for question in questions%}
+        {% for id,question in questions.items()%}
 
         <div class="question">
             <p><h3>This is the original text:</h3></p>
@@ -56,9 +56,9 @@
         </div>
         <div class="question">
             <p><h4>Select an option that best summarizes the text above:</h4></p>
-            <label><input type="radio" name="{{ question["id" ]}}-summary" value="extractive"> {{ question["extractive"] }}</label><br><br>
-            <label><input type="radio" name="{{ question["id" ]}}-summary" value="abstractive"> {{ question["abstractive"] }}</label><br><br>
-            <label><input type="radio" name="{{ question["id" ]}}-summary" value="hybrid"> {{ question["hybrid"] }}</label><br>
+            <label><input type="radio" name="{{ id }}-summary" value="extractive"> {{ question["extractive"] }}</label><br><br>
+            <label><input type="radio" name="{{ id }}-summary" value="abstractive"> {{ question["abstractive"] }}</label><br><br>
+            <label><input type="radio" name="{{ id }}-summary" value="hybrid"> {{ question["hybrid"] }}</label><br>
         </div>
             <br><br>
             <hr class="divider">
