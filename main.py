@@ -25,8 +25,8 @@ def hello_world():
         answer_counts = {key: answer_counts.get(key, 0) for key in range(1, 16)}
 
         question_sample = sample_questions(answer_counts)
-
         return render_template("survey.html", questions=question_sample.to_dict('records'))
+
     if request.method == "POST":
         user_id = str(uuid4())
         for key,value in request.form.items():
@@ -39,10 +39,10 @@ def hello_world():
 
 
 def sample_questions(answer_counts):
-    print(answer_counts)
+
     maximum = max(answer_counts.values())
     for key in answer_counts:
-        answer_counts[key] = 2 ** (maximum - answer_counts[key])
+        answer_counts[key] = 3 ** (maximum - answer_counts[key])
     total = sum(answer_counts.values())
     probabilities = [value / total for value in list(answer_counts.values())]
     question_numbers = (numpy.random.choice(a=list(answer_counts.keys()), size=4, replace=False, p=probabilities))
