@@ -3,6 +3,7 @@ import pandas as pd
 from database import db, Answer, AnswerType
 from uuid import uuid4
 import numpy
+from sqlalchemy.sql import func
 
 
 
@@ -31,7 +32,8 @@ def hello_world():
         user_id = str(uuid4())
         for key,value in request.form.items():
             question_id=int(key.replace('-summary',''))
-            answer = Answer(question_id=question_id,answer=AnswerType[value],user_id=user_id)
+            created_at = func.now()
+            answer = Answer(question_id=question_id,answer=AnswerType[value],user_id=user_id, created_at=created_at)
             db.session.add(answer)
 
         db.session.commit()

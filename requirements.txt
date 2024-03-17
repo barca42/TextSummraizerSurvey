@@ -1,4 +1,5 @@
-flask
-pandas
+flask~=3.0.2
+pandas~=2.2.1
 Flask-SQLAlchemy
-numpy
+numpy~=1.26.4
+SQLAlchemy~=2.0.28
